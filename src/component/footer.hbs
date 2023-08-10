@@ -1,0 +1,24 @@
+<footer>
+    <hr class="my-5">
+
+    <div>
+        {{#with social}}
+        {{>link text=email.text href=email.href blank=true}}
+        {{>link text=phone.text href=phone.href blank=true}}
+        {{>link text=linkedin.text href=linkedin.href blank=true line=true noline=true }}
+        {{/with}}
+    </div>
+
+    <div class=""my-3>
+        <em>Copyright {{firstname}}  {{lastname}}</em>
+    </div>
+
+    <div>
+        <b>{{address}}</b>
+    </div>
+
+
+
+</footer>
+
+   
