@@ -1,0 +1,127 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div>
+        <h2>{{name}}</h2>
+        <q>{{description}}</q> 
+        <p><b>price:</b> {{price}} $, <br> category: {{category}}</p> 
+        <hr>
+    </div>
+    <div>
+        <strong>Features:</strong>
+        <br>
+        <br>
+        <div>
+            {{#with features.processor}}
+            <b>Processor:</b>
+            <ul>
+                <li>brand: {{brand}}</li>
+                <li>model: {{model}}</li>
+                <li>speed: {{speed}}</li>
+                <li>cores: {{cores}}</li>
+                <li>cache: {{cache}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{#with features.memory}}
+            <b>Memory:</b>
+            <ul>
+                <li>type: {{type}}</li>
+                <li>size: {{size}}</li>
+                <li>speed: {{speed}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{#with features.storage}}
+            <b>Storage:</b>
+            <ul>
+                <li>type: {{type}}</li>
+                <li>size: {{size}}</li>
+                
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{#with features.display}}
+            <b>Display:</b>
+            <ul>
+                <li>size: {{size}}</li>
+                <li>resolution: {{resolution}}</li>
+                <li>technology: {{technology}}</li>
+                <li>color space: {{color_space}}</li>
+                <li>brightness: {{brightness}}</li>
+                <li>refresh rate: {{refresh_rate}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{#with features.graphics}}
+            <b>Graphics:</b>
+            <ul>
+                <li>brand: {{brand}}</li>
+                <li>model: {{model}}</li>
+                <li>memory: {{memory}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{#each features.ports}}
+            <b>Ports:</b>
+            <ul>
+                <li>type: {{type}}</li>
+                <li>count: {{count}}</li>
+                <li>features: ({{features}})</li>                 
+            </ul>
+            {{/each}}
+        </div>
+        <div>
+            {{#with features.battery}}
+            <b>Battery:</b>
+            <ul>
+                <li>type: {{type}}</li>
+                <li>capacity: {{capacity}}</li>
+                <li>life: {{life}}</li>
+               
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            <strong>Weight: {{features.weight}}</strong>
+        </div>
+        <br>
+        <div>
+            {{#with features.dimensions}}
+            <b>Dimensions:</b>
+            <ul>
+                <li>height: {{height}}</li>
+                <li>width: {{width}}</li>
+                <li>depth: {{depth}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            <strong>Operating system: {{features.operating_system}}</strong>
+        </div>
+        <br>
+        <div>
+            {{#each features.accessories}}
+            <b>Accessories:</b>
+            <ul>
+                <li>name: {{name}}</li>
+                <li>price: {{price}}</li>
+               
+            </ul>
+            {{/each}}
+        </div>
+
+        
+
+            
+            
+    </div>
+</main>
