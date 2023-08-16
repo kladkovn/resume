@@ -1,0 +1,73 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        <div>{{#with program}}
+            <h2>{{excursion.name}}</h2>
+            <p>{{excursion.location.city}}, 
+            {{excursion.location.country}}</p>
+            <date>{{excursion.date}}</date>
+            <hr>
+            <br>
+        </div>
+        <div>
+            {{#each excursion.program}}
+            <strong>{{name}}</strong>
+            <br>
+            <p>{{type}}, duration ({{duration}})</p>
+        </div>
+        <hr>
+        <div>
+            <i>Details: </i>
+            {{#with details.museum}}
+            <b>{{name}}</b>
+            
+            {{#with location}}
+            <address>{{address}}, {{city}}, {{country}} </address>
+            {{/with}}
+            
+        </div>
+        <br>
+        <div>
+            {{#each exhibits}}
+            <b>{{name}}, {{artist}}</b>
+            <br>
+            <q>{{description}}</q>
+            <br>
+            <em>audio_guide: {{audio_guide}}</em>
+            <br>
+            <br>
+            {{/each}}
+            {{/with}}
+
+            {{#with details.venue}}
+            <b>{{name}}</b>
+            {{#with location}} 
+            <address>{{address}}, {{city}}, {{country}}</address>
+            {{/with}}
+            <br>
+            {{/with}}
+            {{#each details.performers}}
+            <b>{{name}}</b>
+            <p>{{type}}</p> 
+            {{/each}}
+            <hr>
+        </div>
+        <div>
+            {{#with details.guide}}
+            <p>guide: {{firstname}}, language: {{language}}, rating: {{rating}}</p>
+            {{/with}}
+        </div>
+        <hr>
+        {{/each}}
+        {{/with}}
+    </section>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
