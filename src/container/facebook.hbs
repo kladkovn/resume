@@ -1,0 +1,71 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div>
+        <h2>{{name}}</h2>
+         {{#each users}}
+         <ul>
+            <li>id: {{id}}</li>
+            <li>name: {{name}}</li>
+            <li>gender: {{gender}}</li>
+            <li>age: {{age}}</li>
+            <li>friends: {{#each friends}}
+                <ul>
+                    <li>id: {{id}}</li>
+                    <li>name: {{name}}</li>
+                    <li>gender: {{gender}}</li>
+                    <li>age: {{age}}</li>
+                    <li>mutual friends: {{#each mutual_friends}}
+                        <ul>
+                            <li>id: {{id}}</li>
+                            <li>name: {{name}}</li>
+                            <li>gender: {{gender}}</li>
+                            <li>age: {{age}}</li>
+                        </ul>
+                        {{/each}}
+                    </li>
+                    <li>groups: {{#each groups}}
+                        <ul>
+                            <li>id: {{id}}</li>
+                            <li>name: {{name}}</li>
+                            <li>description: {{description}}</li>
+                            <li>members: {{#each members}}
+                                <ul>
+                                    <li>id: {{id}}</li>
+                                    <li>name: {{name}}</li>
+                                    <li>gender: {{gender}}</li>
+                                    <li>age: {{age}}</li>
+                                </ul>
+                                {{/each}}
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </li>
+                </ul>{{/each}}
+            </li>
+            <li>groups: {{#each groups}}
+                <ul>
+                    <li>id: {{id}}</li>
+                    <li>name: {{name}}</li>
+                    <li>description: {{description}}</li>
+                    <li>members: {{#each members}}
+                        <ul>
+                            <li>id: {{id}}</li>
+                            <li>name: {{name}}</li>
+                            <li>gender: {{gender}}</li>
+                            <li>age: {{age}}</li>
+                        </ul> 
+                        {{/each}}
+                    </li>
+                </ul>
+                {{/each}}
+            </li>
+         </ul>
+
+         {{/each}}
+                    
+    </div>
+</main>
