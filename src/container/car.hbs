@@ -1,0 +1,126 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div>
+        <p><b>{{make}},</b> model: {{model}}, {{year}}, {{color}}</p>
+        <hr>
+        <b>Features:</b>
+        <br>
+        <br>
+        {{#with features}}
+        
+        {{#with interior.seats}}
+            <strong>Seats:</strong>
+            <ul>
+                <li>material: {{material}}</li>
+                <li>color: {{color}}</li>
+                <li>heated: {{heated}}</li>
+                <li>ventilated: {{ventilated}}</li>
+            </ul>
+        {{/with}}
+        {{#with interior.dashboard}}
+        <strong>Dashboard:</strong>
+        <ul>
+            <li>material: {{material}}</li>
+            <li>color: {{color}}</li>
+            <li>display: {{#with display}}
+                <ul>
+                    <li>type: {{type}}</li>
+                    <li>size: {{size}}</li>
+                    <li>resolution: {{resolution}}</li>
+                    <li>touchscreen: {{touchscreen}}</li>
+                </ul>
+                {{/with}}
+            </li>
+        </ul>
+        {{/with}}
+
+        {{#with interior.audio}}
+        <strong>Audio:</strong>
+        <ul>
+            <li>system: {{system}}</li>
+            <li>speakers: {{speakers}}</li>
+            <li>subwoofer: {{subwoofer}}</li>
+            <li>bluetooth: {{bluetooth}}</li>
+            <li>USB: {{USB}}</li>
+        </ul>
+
+        {{/with}}
+
+        {{#with exterior.wheels}}
+        <strong>Wheels:</strong>
+        <p>size: {{size}}, type: {{type}}, color: {{color}}</p>
+        {{/with}}
+
+        {{#with exterior.headlights}}
+        <strong>Headlights:</strong>
+        <p>type: {{type}}, brightness: {{brightness}}, automatic: {{automatic}}</p>
+        {{/with}}
+
+        {{#with exterior.sunroof}}
+        <strong>Sunroof:</strong>
+        <p>type: {{type}}, size: {{size}}, automatic: {{automatic}}</p>
+        {{/with}}
+
+        {{#with safety.airbags}}
+        <strong>Safety airbags:</strong>
+        <p>front: {{front}}, side: {{side}}, knee: {{knee}}, rear: {{rear}}</p>
+        {{/with}}
+
+        {{#with safety.assistance}}
+        <strong>Safety assistance:</strong>
+        <ul>
+            <li>blind spot monitoring: {{blind_spot_monitoring}}</li>
+            <li>rear cross traffic alert: {{rear_cross_traffic_alert}}</li>
+            <li>lane departure warning: {{lane_departure_warning}}</li>
+            <li>adaptive cruise control: {{adaptive_cruise_control}}</li>
+            <li>collision warning: {{collision_warning}}</li>
+        </ul>
+        {{/with}}
+        {{/with}}
+
+        {{#with engine}}
+        <strong>Engine:</strong>
+        <ul>
+            <li>type: {{type}}</li>
+            <li>displacement: {{displacement}}</li>
+            <li>horsepower: {{horsepower}}</li>
+            <li>torque: {{torque}}</li>
+            <li>transmission: {{#with transmission}}
+                <ul>
+                    <li>type: {{type}}</li>
+                    <li>gears: {{gears}}</li>
+                </ul>
+                {{/with}}
+            </li>
+        </ul>
+
+        {{/with}}
+
+        {{#with fuel_economy}}
+        <strong>Fuel economy:</strong>
+        <p>city: {{city}}, highway: {{highway}}, combined: {{combined}}</p>
+        {{/with}}
+
+        {{#with price}}
+        <strong>Price:</strong>
+        <ul>
+            <li>base: {{base}}</li>
+            <li>destination: {{destination}}</li>
+            <li>options: {{#with options}}
+                <ul>
+                    <li>navigation: {{navigation}}</li>
+                    <li>moonroof: {{moonroof}}</li>
+                    <li>premium_paint: {{premium_paint}}</li>
+                </ul>
+                {{/with}}
+            </li>
+            <li><b>total: {{total}}</b></li>
+        </ul>
+
+        {{/with}}
+    </div>
+</main>
