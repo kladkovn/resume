@@ -1,0 +1,36 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    <div>
+        <strong>{{name}}</strong>
+        <p>{{description}}</p>
+        {{#with history}}
+        <em>founder:{{founder}}, {{year}}</em>
+        {{/with}}
+        <br>
+        <p><b>Types:</b> {{types}}</p>
+        {{#with syntax}}
+        <strong>Syntax:</strong>
+        <ul>
+            <li>{{variables}}</li>
+            <li>{{functions}}</li>
+            <li>{{conditionals}}</li>
+            <li>{{loops}}</li>
+            <li>{{classes}}</li>
+        </ul>
+        {{/with}}
+        <p><b>Features:</b> {{features}}</p>
+        <p><b>Libraries:</b> {{libraries}}</p>
+        <p>Tools: {{tools}}</p>
+        
+        <strong>Community:</strong>
+        <br>
+        {{#each community}}
+        <p>{{name}}, {{type}}</p>
+        {{/each}}
+        
+    </div>
+</main>
