@@ -1,0 +1,94 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    {{#with page_header}}
+    <div>
+        <h1 class="text-center text-dark text-capitalize">{{title}}</h1>
+        <p class="text-center text-uppercase">{{description}}</p>
+    </div>
+    {{/with}}
+    <hr>
+    {{#with section}}
+    {{#with about_us.title_list}}
+    <div>
+        <p class="display-6 text-end text-dark text-capitalize">{{main}}</p>
+        <h2 class="text-end text-dark text-capitalize">{{sub}}</h2>
+        {{/with}}
+        <br>
+        {{#with about_us}}
+        <button class="btn btn-info">{{button.text}}</button>
+        {{/with}}
+        
+        <br>
+        <br>
+        {{#with advantage}}
+        <p class="display-5 text-dark text-capitalize">{{title}}</p>
+    </div>
+    <br>
+    {{#with efficiency}}
+    <div class="card">
+        <div class="card-body">
+            <p class="display-4 text-muted text-capitalize">{{title}}</p>
+            <h6 class="text-capitalize text-muted">{{sub_title}}</h6>
+            <p class="text-capitalize">{{description}}</p>
+            <br>
+            <button class="btn btn-outline-warning">{{button}}</button>
+
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    {{#with innovation}}
+    <div class="card">
+        <div class="card-body">
+            <p class="display-4 text-muted text-center text-lowcase">{{title}}</p>
+            <h6 class="text-capitalize text-center text-muted">{{sub_title}}</h6>
+            <p class="text-capitalize text-center">{{description}}</p>
+            <br>
+            <button class="btn btn-outline-warning">{{button}}</button>
+
+        </div>
+    </div>
+    {{/with}}
+    <br>
+    {{#with collaboration}}
+    <div class="card">
+        <div class="card-body">
+            <p class="display-4 text-muted text-end text-lowcase">{{title}}</p>
+            <h6 class="text-capitalize text-end text-muted">{{sub_title}}</h6>
+            <p class="text-capitalize text-end">{{description}}</p>
+            <br>
+            <button class="btn btn-outline-warning">{{button}}</button>
+
+        </div>
+    </div>
+    {{/with}}
+    {{/with}}
+    <br>
+    {{#with agreement}}
+    <p class="display-5 text-dark text-lowcase">{{title}}</p>
+    <br>
+    {{#with info}}
+    <div class="card">
+        <h5 class="text-muted text-capitalize">{{sub_title}}</h5>
+        <div>
+            {{#with detail}}
+            <div class="card-body">
+                <p class="text-capitalize text-muted">{{text}}</p>
+                <br>
+                <button class="btn btn-success">{{button}}</button>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+        {{/with}}
+        
+        
+    </div>
+    {{/with}}
+
+</main>
+    
