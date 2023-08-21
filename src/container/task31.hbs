@@ -6,10 +6,10 @@
 <main>
 
     <section>
-        <div class="row">
+        <div class="row g-2">
             {{#with navigation}}
             {{#each links}}
-            <div class="col-3">
+            <div class="col-9">
                 <a href="{{href}}" button class="btn btn-link">{{text}}</button></a>
             {{/each}}
             {{#with button}}
@@ -180,31 +180,24 @@
         {{#with footer}}
         <h5 class="text-capitalize">{{title}}</h5>
         <br>
-        <div class="nav">
-            
-            <div class="nav-item">
+        <div class="row g-4">
+            <div class="col-12">
                 {{#each navigation}}
-                <a href="{{href}}" button class="btn btn-link">{{text}}</button></a>
+                <a href="{{href}}"class="btn btn-link">{{text}}</a>
                 {{/each}}
             </div>
-        
-        
-            <div class="nav-item">
+            <div class="col-12">
                 {{#each socialMedia}}
-                <a href="{{link}}" button class="btn btn-dark">{{name}}</button></a>
+                <a href="{{link}}"class="btn btn-dark">{{name}}</a>
                 {{/each}}
             </div>
-        
-        
-            <div class="nav-item">
+            <div class="col-12">
                 {{#each partners}}
-                <a href="{{link}}" button class="btn btn-info">{{name}}</button></a>
+                <a href="{{link}}"class="btn btn-info">{{name}}</a>
                 {{/each}}
             </div>
-            
         </div>
         {{/with}}
-        
     </section>
     
 </main>
