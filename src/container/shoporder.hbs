@@ -1,0 +1,124 @@
+
+
+<main class="p-5">
+   <section>
+        <div class="row">
+            {{#with navigation}}
+            <nav class="nav bg-light">
+                {{#each links}}
+                <a class="nav-link mx-2" href={{href}}>{{text}}</a>
+                {{/each}}
+            </nav>
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="row g-3">
+            <div class="col-12">
+                <div class="col-8">
+                    <div><h1>{{header}}</h1></div>
+                    {{#with contacts_data}}
+                    <div><h2>{{title}}</h2></div>
+                    <div class="row">
+                        {{#each buttons}}
+                        <div class="col-3 my-3">
+                        {{#if isPrimary}}
+                        <button class="btn btn-warning">{{text}}</button>{{/if}}
+                        {{!-- </div>
+                        <div class="col-3 my-3"> --}}
+                        {{#if isOutline}} 
+                        <button class="btn btn-outline-warning">{{text}}</button>{{/if}}   
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="row">
+                        {{#with form.input}}
+                        {{#with surname}}
+                        <div class="col-5 p-2">
+                            <label class="form-label">{{label}}</label>
+                            <input class="form-control" placeholder={{placeholder}}>
+                            <div class="form-text">{{caption}}</div>
+                        </div>
+                        {{/with}}
+                        {{#with name}}
+                        <div class="col-5 p-2">
+                            <label class="form-label">{{label}}</label>
+                            <input class="form-control" type="text" placeholder={{placeholder}}>
+                            <div class="form-text">{{caption}}</div>
+                        </div>
+                        {{/with}}
+                        {{#with phone}}
+                        <div class="col-5 p-2">
+                            <label class="form-label">{{label}}</label>
+                            <input class="form-control" placeholder={{placeholder}}>
+                            <div class="form-text">{{caption}}</div>
+                        </div>
+                        {{/with}}
+                        {{#with email}}
+                        <div class="col-5 p-2">
+                            <label class="form-label">{{label}}</label>
+                            <input class="form-control" placeholder={{placeholder}}>
+                            <div class="form-text">{{caption}}</div>
+                        </div>
+                        {{/with}}
+                    </div>
+                    <hr class="p-4">
+                    {{!-- {{#each switch}} --}}
+                   
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">{{text}}</label>
+                        <input type="checkbox" class="form-check-input"checked>
+                    </div>
+                    
+                    <div class="form-check form-switch">
+                        <label class="form-check-label">{{text}}</label>
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    
+                    {{!-- {{/each}} --}}
+                    {{/with}}
+                    {{/with}}
+                    <hr>
+                    <div><h2>title</h2></div>
+                    <div class="row bg-light">
+                        <div class="col-4 m-3">
+                            <label class="form-label">labek</label>
+                            <select class="form-select">
+                                <option selected>placeholder</option>
+                                <option value="1">text</option>
+                                <option value="2">text</option>
+                                <option value="3">text</option>
+                                <option value="4">text</option>
+                                <option value="5">text</option>
+                                <option value="6">text</option>
+                            </select>
+                        </div>
+                        <div class="col-4 m-3">
+                            <label class="form-label">labek</label>
+                            <select class="form-select">
+                                <option selected>placeholder</option>
+                                <option value="1">text</option>
+                                <option value="2">text</option>
+                                <option value="3">text</option>
+                                <option value="4">text</option>
+                                <option value="5">text</option>
+                                <option value="6">text</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+
+    </section>
+</main>
+
+
+
+
+
+
