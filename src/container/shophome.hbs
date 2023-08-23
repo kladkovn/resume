@@ -122,10 +122,9 @@
             {{#each footer}}
                      
             <nav class="nav flex-column col-1">
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
+                {{#each this}}
+                <a class="nav-link" href={{link}}>{{text}}</a>
+                {{/each}}
 
             </nav>
             
