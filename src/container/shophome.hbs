@@ -20,9 +20,10 @@
     <section>
         {{#with newsBlock}}
         <h2 class="text-center my-4">{{title}}</h2>
-        {{#each cards}}
+        
         <div class="row g-2">
-            <div class="card col-4 bg-dark">
+            {{#each cards}}
+            <div class="card col-3 bg-dark">
                 <div class="card-header text-light pt-3">
                     <h5>{{title}}</h5>
                     <div class="badge">
@@ -46,12 +47,11 @@
            
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                   {{#unless isActive}}
+                   {{#if isActive}}
                     <a class="nav-link active" aria-current="page" href="#">{{text}}</a>
-                    {{/unless}}
-                    {{#unless isDisabled}}
+                    {{else}}
                     <a class ="nav-link" href="#">{{text}}</a>
-                    {{/unless}}
+                    {{/if}}
                     
                 </li>
                 
@@ -118,31 +118,13 @@
        
         <div class="row">
             {{#each footer}}
-            {{!-- <nav class="nav col-1">
-                <ul class="nav flex-column m-4">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">text</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </nav>     --}}
-            
-            <nav class="nav flex-column col-1">
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
-                <a class="nav-link" href="#">link</a>
-
-            </nav>
-            
+            <nav class="nav col-1">
+                {{#each this}}
+                <div>
+                    <a class="nav-link active" aria-current="page" href={{link}}>{{text}}</a>
+                </div>
+                {{/each}}
+            </nav>    
             {{/each}}
 
         </div>
