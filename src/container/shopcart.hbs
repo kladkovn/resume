@@ -1,0 +1,97 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main class="p-5">
+    <section>
+        <div class="card">
+            {{#with navigation}}
+            <nav class="nav">
+                {{#each links}}
+                <a class="nav-link" href={{href}}>{{text}}</a>
+                {{/each}}
+            </nav>
+            {{/with}}
+        </div>
+    </section>
+    <section>
+        {{#with header}}
+        <div class="ms-5">
+            <div><h1>{{title}}</h1></div>
+            {{#with button}}
+            <button class="btn btn-outline-secondary" href={{link}}>{{text}}</button>
+            {{/with}}
+        </div>
+        {{/with}}
+        <hr class="mt-5">
+    </section>
+    <section>
+        {{> cartGoodsItem}}
+        <hr class="mt-5">
+    </section>
+    <section>
+        {{#with total}}
+        <div class="ms-5">
+            <h2>{{title}}</h2>
+            <p class="display-5">{{amount}}</p>
+            <p>{{delivery}}</p>
+            {{#each buttons}}
+            {{#if isSuccess}}<button class="btn btn-success" href={{link}}>{{text}}</button>{{/if}}
+            <br>
+            {{#if isOutline}}<button class="btn btn-outline-success" href={{link}}>{{text}}</button>{{/if}}
+            {{/each}}
+        </div>
+        {{/with}}
+        <hr class="mt-5">
+    </section>
+    <section>
+        {{#with goodsOtherBlock}}
+        <h2 class="text-center">{{title}}</h2>
+        <div class="row">
+        {{#each cards}}
+            <div class="card col-4 mt-2">
+                <img class="card-img-top" src={{image}} alt="top photo">
+                <div class="card-body">
+                    <div class="card-title"><h5>{{title}}</h5></div>
+                    {{#if isHot}}<h5><span class="badge bg-warning rounded-pill-20 text-uppercase">hot!</span></h5>{{/if}}
+                    {{#if idNew}} <h5><span class="badge bg-primary text-capitalize">нове</span></h5>{{/if}}
+                    <div><p>{{description}}</p></div> 
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+        <hr class="mt-5">
+    </section>
+    <section>
+        <div class="g-4">
+            {{#with subscribe}}
+            <div class="card bg-dark m-2">
+                <div class="card-body">
+                    <h2 class="text-light text-capitalize">{{header}}</h2>
+                    <p class="text-light text-capitalize">{{description}}</p>
+                    {{#each buttons}}
+                    <button class="btn btn-primary" href={{link}}>{{text}}</button>
+                    {{/each}}
+                </div>
+
+            </div>
+            {{/with}}
+        </div>
+        <hr class="mt-5">
+    </section>
+    <section>
+        <div class="row">
+            {{#each footer}}
+            <nav class="nav flex-column col-1">
+                {{#each this}}
+                <a class="nav-link" href={{link}}>{{text}}</a>
+                {{/each}}
+
+
+            </nav>
+            {{/each}}
+        </div>
+    </section>
+</main>    
