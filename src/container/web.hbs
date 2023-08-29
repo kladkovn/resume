@@ -3,35 +3,41 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
-    {{#with web}}
-    {{#each languages}}
-    <strong>{{name}}, ({{version}})</strong>
-    <p>{{description}}</p>
-    {{#each elements}}
-    <ul>
-        <li> elements: {{name}}</li>
-        <li>{{description}}</li>
-    </ul>
-    {{#each attributes}}
-    <p>attributes: {{name}}</p>
-    <em>{{description}}</em>
-    {{/each}}
-    {{/each}}
-    {{#each properties}}
-    <p>{{name}}, {{description}}</p>
-    {{#each values}}
-    <p>{{value}}, {{description}}</p>
-    {{/each}}
-    {{/each}}
-    {{#each functions}}
-    <p>{{name}}, {{description}}</p>
-    {{#each parameters}}
-    <p>{{name}}, {{type}}</p>
-    <em>{{description}}</em>
-    {{/each}}
-    {{/each}}
-    <hr>
+<div class="row p-5">
+     {{#with web}}
+     {{#each languages}}
+    <div class="card col-4">
+        <div class="card-body">
+           
+            <strong>{{name}}, ({{version}})</strong>
+            <p>{{description}}</p>
+            {{#each elements}}
+            <ul>
+                <li> elements: {{name}}</li>
+                <li>{{description}}</li>
+            </ul>
+            {{#each attributes}}
+            <p>attributes: {{name}}</p>
+            <em>{{description}}</em>
+            {{/each}}
+            {{/each}}
+            {{#each properties}}
+            <p>{{name}}, {{description}}</p>
+            {{#each values}}
+            <p>{{value}}, {{description}}</p>
+            {{/each}}
+            {{/each}}
+            {{#each functions}}
+            <p>{{name}}, {{description}}</p>
+            {{#each parameters}}
+            <p>{{name}}, {{type}}</p>
+            <em>{{description}}</em>
+            {{/each}}
+            {{/each}}
+            <hr>
+            
+        </div>
+    </div>
     {{/each}}
     {{/with}}
 </div>

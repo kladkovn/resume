@@ -3,94 +3,107 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 <main>
-    <div>
-        <h1>{{name}}</h1>
-        <p>Birth: {{birthdate}}  <br> Death: {{deathdate}}</p>
-        <p>Birthplace: {{birthplace}} <br> Deathplace: {{deathplace}}</p>
-        <p>Nationality: {{nationality}}</p>
-        <p>Occupation: {{occupation}}</p>
+    <div class="row g-4">
+        <div class=" card col-6">
+            <div class="card-body text-center">
+                <div>
+                    <h1>{{name}}</h1>
+                    <p>Birth: {{birthdate}}  <br> Death: {{deathdate}}</p>
+                    <p>Birthplace: {{birthplace}} <br> Deathplace: {{deathplace}}</p>
+                    <p>Nationality: {{nationality}}</p>
+                    <p>Occupation: {{occupation}}</p>
+                </div>
+                <hr>
+                <div>
+                    <strong>What is famouse:</strong>
+                    <p>{{known_for}}</p>
+                    <br>
+                    <hr>
+                    <strong>Education</strong>
+                    <ul>
+                        {{#each education}}
+                        <li>{{degree}},  {{field}}</li>
+                        <li>{{institution}},  {{year}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <hr>
+                <div>
+                    <strong>Publications</strong>
+                        {{#each notable_publications}}
+                        <cite>{{title}}</cite>
+                        <p>{{publisher}}, {{year}}</p>
+                        {{/each}}
+                </div>
+                <hr>
+            
+            
+                <div>
+                    <strong>Partners</strong>
+                    <br>
+                    <br>
+                        {{#each partners}}
+                        <b>{{name}}</b>
+                        <p>{{relationship}}, {{years}}</p>
+                        {{/each}}
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class=" card col-6">
+            <div class="card-body text-center">   
+                <div>
+                    <strong>Awards</strong>
+                    <br>
+                    {{#each awards}}
+                    <cite>{{title}}, {{year}}</cite>
+                    <br>
+                    <q>{{description}}</q>
+                    {{/each}}
+                </div>
+                <hr>
+                <br>
+                <div>
+                    <strong>Influences: </strong>
+                    <p>{{influences}}</p>
+                </div>
+                <hr>
+                <div>
+                    <strong>Influenced: </strong>
+                    <p>{{influenced}}</p>
+                </div>
+                <hr>
+                <div>
+                    <strong>Quote: </strong>
+                    <blockquote>{{quotes}}</blockquote>
+                </div>
+                <hr>
+                <div>
+                    <strong>Major discoveries: </strong>
+                    <br>
+                    {{#each major_discoveries}}
+                    <cite>{{title}},  {{year}}</cite>
+                    <br>
+                    <q>{{description}}</q>
+                    {{/each}}
+                </div>
+                <hr>
+                <div>
+                    <strong>Contributions: </strong>
+                    <br>
+                    {{#with contributions}}
+                    <em>{{title}}</em>
+                    <br>
+                    <blockquote>{{description}}</blockquote>
+                    <p>{{year}}, {{field}}</p>
+                    {{/with}}
+                    
+                </div>
+                <hr>
+            </div> 
+        </div>
     </div>
-    <hr>
-    <div>
-        <strong>What is famouse:</strong>
-        <p>{{known_for}}</p>
-        <br>
-        <hr>
-        <strong>Education</strong>
-        <ul>
-            {{#each education}}
-            <li>{{degree}},  {{field}}</li>
-            <li>{{institution}},  {{year}}</li>
-            {{/each}}
-        </ul>
-    </div>
-    <hr>
-    <div>
-        <strong>Publications</strong>
-            {{#each notable_publications}}
-            <cite>{{title}}</cite>
-            <p>{{publisher}}, {{year}}</p>
-            {{/each}}
-    </div>
-    <hr>
-    <div>
-        <strong>Partners</strong>
-        <br>
-        <br>
-            {{#each partners}}
-            <b>{{name}}</b>
-            <p>{{relationship}}, {{years}}</p>
-            {{/each}}
-    </div>
-    <hr>
-    <div>
-        <strong>Awards</strong>
-        <br>
-        {{#each awards}}
-        <cite>{{title}}, {{year}}</cite>
-        <br>
-        <q>{{description}}</q>
-        {{/each}}
-    </div>
-    <hr>
-    <br>
-    <div>
-        <strong>Influences: </strong>
-        <p>{{influences}}</p>
-    </div>
-    <hr>
-    <div>
-        <strong>Influenced: </strong>
-        <p>{{influenced}}</p>
-    </div>
-    <hr>
-    <div>
-        <strong>Quote: </strong>
-        <blockquote>{{quotes}}</blockquote>
-    </div>
-    <hr>
-    <div>
-        <strong>Major discoveries: </strong>
-        <br>
-        {{#each major_discoveries}}
-        <cite>{{title}},  {{year}}</cite>
-        <br>
-        <q>{{description}}</q>
-        {{/each}}
-    </div>
-    <hr>
-    <div>
-        <strong>Contributions: </strong>
-        <br>
-        {{#with contributions}}
-        <em>{{title}}</em>
-        <br>
-        <blockquote>{{description}}</blockquote>
-        <p>{{year}}, {{field}}</p>
-        {{/with}}
-        
-    </div>
-    <hr>
+    
 </main>
 
 

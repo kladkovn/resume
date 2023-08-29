@@ -3,35 +3,29 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
-    <section>
-        <div>{{#with program}}
-            <h2>{{excursion.name}}</h2>
-            <p>{{excursion.location.city}}, 
-            {{excursion.location.country}}</p>
-            <date>{{excursion.date}}</date>
-            <hr>
-            <br>
+<div class="row p-5">
+    <div class="card my-4">
+        <div class="card-body text-center">
+        {{#with program}}
+        {{#with excursion}}
+        <h2>{{name}}</h2>
+        <p>{{location.city}}, 
+        {{location.country}}</p>
+        <date>{{date}}</date>
         </div>
-        <div>
-            {{#each excursion.program}}
+    </div>
+    <div class="card">
+        <div class="card-body mt-4 text-center">
+            {{#each program}}
             <strong>{{name}}</strong>
             <br>
             <p>{{type}}, duration ({{duration}})</p>
-        </div>
-        <hr>
-        <div>
             <i>Details: </i>
             {{#with details.museum}}
             <b>{{name}}</b>
-            
             {{#with location}}
             <address>{{address}}, {{city}}, {{country}} </address>
             {{/with}}
-            
-        </div>
-        <br>
-        <div>
             {{#each exhibits}}
             <b>{{name}}, {{artist}}</b>
             <br>
@@ -42,7 +36,7 @@
             <br>
             {{/each}}
             {{/with}}
-
+        
             {{#with details.venue}}
             <b>{{name}}</b>
             {{#with location}} 
@@ -54,17 +48,16 @@
             <b>{{name}}</b>
             <p>{{type}}</p> 
             {{/each}}
-            <hr>
-        </div>
-        <div>
+            
             {{#with details.guide}}
             <p>guide: {{firstname}}, language: {{language}}, rating: {{rating}}</p>
+            <hr>
+            {{/with}}
+            {{/each}}
+            {{/with}}
             {{/with}}
         </div>
-        <hr>
-        {{/each}}
-        {{/with}}
-    </section>
+    </div>
 </div>
 
 {{!-- 

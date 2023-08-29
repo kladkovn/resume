@@ -3,17 +3,17 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<main>
-    <div>
-        <h2>{{name}}</h2>
-        <q>{{description}}</q> 
-        <p><b>price:</b> {{price}} $, <br> category: {{category}}</p> 
-        <hr>
+<main class="row p-5">
+    <div class="card">
+        <div class="card-body text-center">
+            <h1 class="my-2">{{name}}</h1>
+            <q class="my-2">{{description}}</q> 
+            <p><b>price:</b> {{price}} $, <br> category: {{category}}</p> 
+            <hr>
+        </div>
     </div>
-    <div>
-        <strong>Features:</strong>
-        <br>
-        <br>
+    <div class="card col-6 g-2">
+        <div class="card-body">
         <div>
             {{#with features.processor}}
             <b>Processor:</b>
@@ -69,59 +69,59 @@
             </ul>
             {{/with}}
         </div>
-        <div>
-            {{#each features.ports}}
-            <b>Ports:</b>
-            <ul>
-                <li>type: {{type}}</li>
-                <li>count: {{count}}</li>
-                <li>features: ({{features}})</li>                 
-            </ul>
-            {{/each}}
         </div>
-        <div>
-            {{#with features.battery}}
-            <b>Battery:</b>
-            <ul>
-                <li>type: {{type}}</li>
-                <li>capacity: {{capacity}}</li>
-                <li>life: {{life}}</li>
-               
-            </ul>
-            {{/with}}
+    </div>
+    <div class="card col-6 g-2">
+        <div class="card-body">
+            <div>
+                {{#each features.ports}}
+                <b>Ports:</b>
+                <ul>
+                    <li>type: {{type}}</li>
+                    <li>count: {{count}}</li>
+                    <li>features: ({{features}})</li>                 
+                </ul>
+                {{/each}}
+            </div>
+            <div>
+                {{#with features.battery}}
+                <b>Battery:</b>
+                <ul>
+                    <li>type: {{type}}</li>
+                    <li>capacity: {{capacity}}</li>
+                    <li>life: {{life}}</li>
+                
+                </ul>
+                {{/with}}
+            </div>
+            <div>
+                <strong>Weight: {{features.weight}}</strong>
+            </div>
+            <br>
+            <div>
+                {{#with features.dimensions}}
+                <b>Dimensions:</b>
+                <ul>
+                    <li>height: {{height}}</li>
+                    <li>width: {{width}}</li>
+                    <li>depth: {{depth}}</li>
+                </ul>
+                {{/with}}
+            </div>
+            <div>
+                <strong>Operating system: {{features.operating_system}}</strong>
+            </div>
+            <br>
+            <div>
+                {{#each features.accessories}}
+                <b>Accessories:</b>
+                <ul>
+                    <li>name: {{name}}</li>
+                    <li>price: {{price}}</li>
+                
+                </ul>
+                {{/each}}
+            </div>
         </div>
-        <div>
-            <strong>Weight: {{features.weight}}</strong>
-        </div>
-        <br>
-        <div>
-            {{#with features.dimensions}}
-            <b>Dimensions:</b>
-            <ul>
-                <li>height: {{height}}</li>
-                <li>width: {{width}}</li>
-                <li>depth: {{depth}}</li>
-            </ul>
-            {{/with}}
-        </div>
-        <div>
-            <strong>Operating system: {{features.operating_system}}</strong>
-        </div>
-        <br>
-        <div>
-            {{#each features.accessories}}
-            <b>Accessories:</b>
-            <ul>
-                <li>name: {{name}}</li>
-                <li>price: {{price}}</li>
-               
-            </ul>
-            {{/each}}
-        </div>
-
-        
-
-            
-            
     </div>
 </main>

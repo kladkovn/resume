@@ -1,21 +1,27 @@
 
 <main class="p-5">
-    <div>
-        <div>{{>title data='Personal Info'}}</div>
-        <br>
-        <div>
-            {{#with person}}
-            <div>
-                <h2>{{name}} </h2>
-                <p>age {{age}}, {{gender}}</p>
-                <address>
-                    {{address.street}}, {{address.city}}, {{address.state}}, {{address.zip}}, {{address.country}}
-                </address>
-                
+    <div class="row">
+        <div class="card col-4 p-4">
+            <div class="card-body">
+                <div>{{>title data='Personal Info'}}</div>
+                <br>
+                <div>
+                    {{#with person}}
+                    <div>
+                        <h2>{{name}} </h2>
+                        <p>age {{age}}, {{gender}}</p>
+                        <address>
+                            {{address.street}}, {{address.city}}, {{address.state}}, {{address.zip}}, {{address.country}}
+                        </address>
+                        
+                    </div>
+                    <hr>
+                    <br>
+                </div>
             </div>
-            <hr>
-            <br>
-            <div>
+        </div>
+        <div class="card col-4 p-4">
+            <div class="my-2">
                 <ul>
                     {{#each education}}
                     <li>
@@ -26,7 +32,7 @@
                     {{/each}}
                 </ul>
             </div>
-            <div>
+            <div class="my-2">
                 <ul>
                     {{#each workExperience}}
                     
@@ -36,12 +42,10 @@
                         <em>{{title}}, {{startDate}} | {{endDate}}</em>
                         <br>
                         <p>{{responsibilities}}</p>
-                        <br>
                         <em>{{year_founded}} {{industry}}</em>
                         <br>
-                        <br>
-                        <hr>
                     </li>
+                    <br>
                     <li>
                         {{#each employees}}
                         <p>Employees List</p>
@@ -93,11 +97,11 @@
                     {{/each}}
                     
                 </ul>
-            
             </div>
+        </div>
                     
             {{/with}}
-        </div>
+        
             
     </div>
 </main>
